@@ -16,7 +16,7 @@ var app = express();
  * Configurations.
  */
 // all environments
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3003);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
