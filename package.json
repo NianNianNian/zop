@@ -1,0 +1,13 @@
+{
+  "name": "photomanager",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.0",
+    "mongodb": ">= 0.9.6-7",
+    "aws-sdk": "1.13"
+  }
+}
