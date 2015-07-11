@@ -3,7 +3,7 @@ var photomgrControllers = angular.module('photomgrControllers', ['photomgrDirect
 photomgrControllers.controller('HomeCtrl', ['$scope', 'photos',
 	function($scope, photos) {
 
-		$scope.homeMsg = "PhotoManager lets you upload photos and create galleries of your favorite pics!";
+		$scope.homeMsg = "Zoo Master lets you upload animals photos and create galleries of kinds of animals!";
 		$scope.randomPhoto = window._.sample(photos);
 	}
 ]);

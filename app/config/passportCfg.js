@@ -4,6 +4,7 @@ var db = require('../models/userDbSchema');
 
 passport.serializeUser(function(user, done) {
 	done(null, user.id);
+	console.log(user.id);
 });
 
 passport.deserializeUser(function(id, done) {
@@ -34,14 +35,22 @@ exports.ensureAuthenticated = function ensureAuthenticated(req, res, next) {
 }
 
 exports.postLogin = function postLogin(req, res, next) {
+
+	var username = req.body.username;
+	var password = req.body.password;
+	console.log(username);
 	passport.authenticate('local', function(err, user, info) {
 	if (err) { return next(err) }
+	//res.send(user)
+	console.log("ahahah");
+	console.log(user);
 	if (!user) {
+		//return res.send(user)
 		return res.send(401)
 	}
 	req.logIn(user, function(err) {
 		if (err) { return next(err); }
-		//res.cookie('user', JSON.stringify({'id': user._id}), { httpOnly: false } );
+		res.cookie('user', JSON.stringify({'id': user._id}), { httpOnly: false } );
 		return res.send(user);
 	});
 	})(req, res, next);	
